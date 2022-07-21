@@ -3,12 +3,7 @@ import { useSelector } from 'react-redux';
 
 const LogIn = () => {
 
-    const userName = () => {
-
     const userName = useSelector(state => state.userName)
-
-    }
-
 
     const [isVisible, setIsVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(true);

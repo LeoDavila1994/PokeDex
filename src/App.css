@@ -104,10 +104,10 @@ section{
   background-color: transparent;
   border: 0;
   animation-name: pokeball-position;
-  animation-duration: 40s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
 }
 
 .pokeball-rotate{
@@ -120,10 +120,10 @@ section{
   cursor: pointer;
 
   animation-name: pokeball-rotate;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+  animation-direction: normal;
+  animation-timing-function: linear;
 }
 
 .pokeball-position:hover{
@@ -140,9 +140,10 @@ section{
   top: 1px;
 
   animation-name: top-pokeball;
-  animation-duration: 20s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  animation-timing-function: ease;
 }
 
 .center{
@@ -175,47 +176,47 @@ section{
 
 @keyframes pokeball-position{
   0%{
-    transform: translate(-50vw, -10vh);
+    transform: translate(-70vw, -10vh);
   }
 
   10%{
-    transform: translate(50vw, 25vh);
+    transform: translate(70vw, 25vh);
   }
 
   20%{
-    transform: translate(-50vw, 40vh);
+    transform: translate(-70vw, 40vh);
   }
 
   30%{
-    transform: translate(50vw, -35vh);
+    transform: translate(70vw, -35vh);
   }
 
   40%{
-    transform: translate(-50vw, -40vh);
+    transform: translate(-70vw, -40vh);
   }
 
   50%{
-    transform: translate(50vw, -30vh);
+    transform: translate(70vw, -30vh);
   }
 
   60%{
-    transform: translate(-50vw, -15vh);
+    transform: translate(-70vw, -15vh);
   }
 
   70%{
-    transform: translate(50vw, 0vh);
+    transform: translate(70vw, 0vh);
   }
 
   80%{
-    transform: translate(-50vw, 10vh);
+    transform: translate(-70vw, 10vh);
   }
 
   90%{
-    transform: translate(50vw, 25vh);
+    transform: translate(70vw, 25vh);
   }
 
   100%{
-    transform: translate(-50vw, 40vh);
+    transform: translate(-70vw, 40vh);
   }
 
 }
