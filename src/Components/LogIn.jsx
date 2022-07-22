@@ -17,7 +17,7 @@ const LogIn = () => {
             setIsLoading(false);
         }
         setTimeout(loader, 3000);
-    }, [])
+    }, []);
 
     const showModal = () => {
         setIsVisible(!isVisible)
@@ -27,7 +27,7 @@ const LogIn = () => {
 
         e.preventDefault();
         dispatch(changeName(user));
-        if(user !== ""){
+        if(user){
             navigate("/pokedex");
             setUser("");
         } else if (user === ""){
@@ -52,7 +52,7 @@ const LogIn = () => {
                                     <div className='close' onClick={showModal}><i className="fa-regular fa-circle-xmark"></i></div>
                                     <form className='input-modal-container' onSubmit={submit}>
                                         <input type="text" className='name-user' placeholder='Type your Name' value={user} onChange={e => setUser(e.target.value)} />
-                                        <button>Let´s Go !</button>
+                                        <button><i className="fa-solid fa-user"></i></button>
                                     </form>
                                     <div className='modal-info'>
                                         <div className='img-modal-container'>
