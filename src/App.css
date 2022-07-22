@@ -330,13 +330,70 @@ section {
 }
 
 .img-modal-container {
-  width: 100px;
-  height: 150px;
+  width: 80px;
+  position: absolute;
+  bottom: 155px;
 }
 
 .img-modal-container img {
   width: 100%;
-  height: 160px;
+  height: 125px;
+}
+
+.horizon{
+  background-color: black;
+  width: 15px;
+  height: 56px;
+  position: absolute;
+  bottom: 43px;
+  left: 55px;
+  border-radius: 6px;
+  z-index: 12;
+}
+
+.vertical{
+  background-color: black;
+  width: 56px;
+  height: 15px;
+  position: absolute;
+  bottom: 63px;
+  left: 35px;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.horizon2{
+  background-color: gray;
+  width: 19px;
+  height: 60px;
+  position: absolute;
+  bottom: 41px;
+  left: 53px;
+  border-radius: 6px;
+  z-index: 4;
+}
+
+.vertical2{
+  background-color: gray;
+  width: 60px;
+  height: 19px;
+  position: absolute;
+  bottom: 61px;
+  left: 33px;
+  border-radius: 6px;
+  z-index: 5;
+}
+
+.dial{
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+  background-color: rgb(66, 45, 45);
+  position: absolute;
+  bottom: 32px;
+  left: 23px;
+  z-index: 1;
+  border: 3px solid black;
 }
 
 .container {
@@ -345,7 +402,7 @@ section {
   padding: 1rem;
   background-color: crimson;
   border-radius: 10px;
-  border: 2px solid whitesmoke;
+  border: 4px solid black;
   box-shadow: 0 5px 25px black;
   position: relative;
   display: flex;
@@ -355,27 +412,41 @@ section {
 }
 
 .input-modal-container {
-  width: 100%;
+  width: 200px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: 0;
+  right: 20px;
 }
 
 .input-modal-container button {
-  margin-top: 1rem;
-  background-color: rgb(20, 163, 220);
-  border-radius: 6px;
-  border: 1px solid whitesmoke;
+  background-color: rgb(20, 123, 220);
+  border-radius: 50%;
+  border: 3px solid gray;
   color: whitesmoke;
-  width: 55px;
+  width: 35px;
   height: 35px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  font-size: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Press Start 2P';
+  position: absolute;
+  bottom: -255px;
+  right: 32px;
+}
+
+.screen{
+  background-color: rgb(20, 207, 220);
+  width: 225px;
+  height: 260px;
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  border-radius: 10px;
+  border: 7px solid gray;
 }
 
 .name-user {
@@ -389,7 +460,7 @@ section {
 }
 
 .user-welcome {
-  width: 90%;
+  width: 180px;
   height: 45px;
   border-radius: 4px;
   border: 1px solid whitesmoke;
@@ -399,12 +470,13 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  top: 40px;
+  right: 46px;
 }
 
 .user-welcome p {
-  font-size: 0.7rem;
+  font-size: 0.5rem;
   display: block;
   white-space: nowrap;
   border-right: 4px solid;
@@ -430,10 +502,18 @@ section {
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  bottom: 65px;
+  right: 25px;
   color: whitesmoke;
   cursor: pointer;
+  background-color: rgb(20, 220, 70);
+  border: 3px solid gray;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*---------------- POKEDEX ---------------*/
@@ -520,7 +600,7 @@ section {
   width: 250px;
   height: 250px;
   border-radius: 10px;
-  border: 3px solid gray;
+  border: 3px solid black;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -529,17 +609,29 @@ section {
   background-color: whitesmoke;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  position: relative;
+}
+
+.poke-center{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 140px;
+  border: 3px solid black;
 }
 
 .pokemon-card:hover {
   box-shadow: 0 5px 20px rgba(211, 231, 31, 0.5);
 }
 
-.pokemon-card p {
-  margin: 0.4rem;
-  color: red;
+.name-cont-p{
+  width: 100%;
+  height: 75px;
   display: flex;
-  font-size: 0.8rem;
+  justify-content: center;
+  color: crimson;
 }
 
 .poke-image {
@@ -548,7 +640,7 @@ section {
   background-color: crimson;
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid gray;
+  border-bottom: 3px solid black;
   border-radius: 6px 6px 0 0;
 }
 

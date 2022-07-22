@@ -18,9 +18,10 @@ const PokemonCard = ({ pokeData }) => {
                 <div className='poke-image'>
                     <img src={pokemon.sprites?.front_default} alt="" />
                 </div>
-                <p>{pokemon.name}</p>
-                <p>{pokemon.types?.[0].type.name}</p>
-                <p>{pokemon.types?.[1]?.type.name}</p>
+                <div className='poke-center'></div>
+                <div className='name-cont-p'>
+                    <p>{pokemon.name}</p>
+                </div>
             </div>
         </Link>
     );

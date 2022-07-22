@@ -27,10 +27,10 @@ const LogIn = () => {
 
         e.preventDefault();
         dispatch(changeName(user));
-        if(user){
+        if (user) {
             navigate("/pokedex");
             setUser("");
-        } else if (user === ""){
+        } else if (user === "") {
             alert("Fill name field")
         }
     }
@@ -49,10 +49,16 @@ const LogIn = () => {
                         {isVisible ? (
                             <div className='modal'>
                                 <div className='container'>
-                                    <div className='close' onClick={showModal}><i className="fa-regular fa-circle-xmark"></i></div>
+                                    <div className='screen'></div>
+                                    <div className='horizon'></div>
+                                    <div className='vertical'></div>
+                                    <div className='horizon2'></div>
+                                    <div className='vertical2'></div>
+                                    <div className='dial'></div>
+                                    <div className='close' onClick={showModal}>B</div>
                                     <form className='input-modal-container' onSubmit={submit}>
                                         <input type="text" className='name-user' placeholder='Type your Name' value={user} onChange={e => setUser(e.target.value)} />
-                                        <button><i className="fa-solid fa-user"></i></button>
+                                        <button>A</button>
                                     </form>
                                     <div className='modal-info'>
                                         <div className='img-modal-container'>
