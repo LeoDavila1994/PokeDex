@@ -434,8 +434,24 @@ section {
   align-items: center;
   font-family: 'Press Start 2P';
   position: absolute;
-  bottom: -255px;
-  right: 32px;
+  bottom: -231px;
+  right: -12px;
+}
+
+.close {
+  position: absolute;
+  bottom: 46px;
+  right: 63px;
+  color: whitesmoke;
+  cursor: pointer;
+  background-color: rgb(20, 220, 70);
+  border: 3px solid gray;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .screen{
@@ -498,22 +514,6 @@ section {
   50% {
     border-color: crimson;
   }
-}
-
-.close {
-  position: absolute;
-  bottom: 65px;
-  right: 25px;
-  color: whitesmoke;
-  cursor: pointer;
-  background-color: rgb(20, 220, 70);
-  border: 3px solid gray;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /*---------------- POKEDEX ---------------*/
