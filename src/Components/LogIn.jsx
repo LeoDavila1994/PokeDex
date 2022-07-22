@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { changeName } from '../store/slices/userName.slice';
+import { useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const [isVisible, setIsVisible] = useState(false);
@@ -25,7 +27,12 @@ const LogIn = () => {
 
         e.preventDefault();
         dispatch(changeName(user));
-        setUser("");
+        if(user !== ""){
+            navigate("/pokedex");
+            setUser("");
+        } else if (user === ""){
+            alert("Fill name field")
+        }
     }
 
     return (

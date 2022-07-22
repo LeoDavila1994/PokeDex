@@ -554,3 +554,7 @@ section {
   height: 150px;
   border-radius: 50%;
 }
+
+.link{
+  text-decoration: none;
+}
