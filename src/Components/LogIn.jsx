@@ -31,7 +31,7 @@ const LogIn = () => {
             navigate("/pokedex");
             setUser("");
         } else if (user === "") {
-            alert("Fill name field")
+            alert("Put your name")
         }
     }
 
@@ -55,6 +55,11 @@ const LogIn = () => {
                                     <div className='horizon2'></div>
                                     <div className='vertical2'></div>
                                     <div className='dial'></div>
+                                    <div className='select'></div>
+                                    <div className='start'></div>
+                                    <div className='voice1'></div>
+                                    <div className='voice2'></div>
+                                    <div className='voice3'></div>
                                     <div className='close' onClick={showModal}>B</div>
                                     <form className='input-modal-container' onSubmit={submit}>
                                         <input type="text" className='name-user' placeholder='Type your Name' value={user} onChange={e => setUser(e.target.value)} />

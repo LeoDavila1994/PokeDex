@@ -401,7 +401,7 @@ section {
   height: 400px;
   padding: 1rem;
   background-color: crimson;
-  border-radius: 10px;
+  border-radius: 10px 10px 70px 10px;
   border: 4px solid black;
   box-shadow: 0 5px 25px black;
   position: relative;
@@ -452,6 +452,63 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.select{
+  background-color: black;
+  width: 7px;
+  height: 25px;
+  position: absolute;
+  border-radius: 5px;
+  transform: rotate(57deg);
+  border: 2px solid gray;
+  bottom: 100px;
+  right: 142px;
+}
+
+.start{
+  background-color: black;
+  width: 7px;
+  height: 25px;
+  position: absolute;
+  border-radius: 5px;
+  transform: rotate(57deg);
+  border: 2px solid gray;
+  bottom: 100px;
+  right: 112px;
+}
+
+.voice1{
+  width: 7px;
+  height: 7px;
+  background-color: gray;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  bottom: 10px;
+  right: 155px;
+}
+
+.voice2{
+  width: 7px;
+  height: 7px;
+  background-color: gray;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  bottom: 10px;
+  right: 135px;
+}
+
+.voice3{
+  width: 7px;
+  height: 7px;
+  background-color: gray;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  bottom: 10px;
+  right: 115px;
 }
 
 .screen{
