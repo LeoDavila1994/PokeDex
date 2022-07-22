@@ -1,28 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { changeName } from '../store/slices/userName.slice';
 
 const LogIn = () => {
 
-    const userName = useSelector(state => state.userName)
+    const dispatch = useDispatch();
 
     const [isVisible, setIsVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-    const [ user, setUser ] = useState("");
+    const [user, setUser] = useState("");
 
     useEffect(() => {
-        const loader = () =>{
+        const loader = () => {
             setIsLoading(false);
         }
         setTimeout(loader, 3000);
-    },[])
+    }, [])
 
     const showModal = () => {
         setIsVisible(!isVisible)
     }
 
     const submit = e => {
-        e.preventDefault()
-        setUser(user);
+
+        e.preventDefault();
+        dispatch(changeName(user));
+        setUser("");
     }
 
     return (
@@ -41,12 +44,12 @@ const LogIn = () => {
                                 <div className='container'>
                                     <div className='close' onClick={showModal}><i className="fa-regular fa-circle-xmark"></i></div>
                                     <form className='input-modal-container' onSubmit={submit}>
-                                        <input type="text"  className='name-user' placeholder='Type your Name' value={user} onChange={e => setUser(e.target.value)}/>
+                                        <input type="text" className='name-user' placeholder='Type your Name' value={user} onChange={e => setUser(e.target.value)} />
                                         <button>Let´s Go !</button>
                                     </form>
                                     <div className='modal-info'>
                                         <div className='img-modal-container'>
-                                            <img src="https://www.pngmart.com/files/12/Pokemon-Ash-Ketchum-Transparent-PNG.png" alt="" />
+                                            <img src="https://images.wikidexcdn.net/mwuploads/wikidex/f/f8/latest/20180820010545/Profesor_Oak_LGPE.png" alt="" />
                                         </div>
                                     </div>
                                     <div className='user-welcome'>

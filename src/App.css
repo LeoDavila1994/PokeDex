@@ -1,17 +1,19 @@
-body{
+body {
   font-size: 16px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: rgb(218, 238, 255);
 }
 
-section{
+section {
   width: 100%;
   height: 100vh;
   font-family: 'Press Start 2P';
+  position: relative;
 }
 
-.loader{
+.loader {
   width: 100%;
   height: 100vh;
   background-color: crimson;
@@ -21,7 +23,7 @@ section{
   flex-direction: column;
 }
 
-.loader-container{
+.loader-container {
   width: 250px;
   padding: 1rem;
   background-color: #fcfefc;
@@ -30,11 +32,11 @@ section{
   margin: 2rem;
 }
 
-.loader-container img{
+.loader-container img {
   width: 100%;
 }
 
-.instruction{
+.instruction {
   color: whitesmoke;
   width: 300px;
   height: 100px;
@@ -47,27 +49,31 @@ section{
   font-size: 0.7rem;
 }
 
-.instruction p{
+.instruction p {
   display: block;
   white-space: nowrap;
   border-right: 4px solid;
   width: 24ch;
 
   animation: typing 3s steps(24),
-  blink .5s infinite alternate ease-in-out;
+    blink .5s infinite alternate ease-in-out;
 
   overflow: hidden;
 }
 
 @keyframes typing {
-  from { width: 0 }
+  from {
+    width: 0
+  }
 }
 
 @keyframes blink {
-  50% { border-color: crimson;}
+  50% {
+    border-color: crimson;
+  }
 }
 
-.login-container{
+.login-container {
   background-image: url("https://fondosmil.com/fondo/14735.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -76,7 +82,7 @@ section{
   height: 100vh;
 }
 
-.logo{
+.logo {
   width: 70%;
   height: 60px;
   margin-right: auto;
@@ -87,7 +93,7 @@ section{
   background-size: contain;
 }
 
-.pokeball-route{
+.pokeball-route {
   width: 100%;
   height: calc(100vh - 60px);
   display: flex;
@@ -97,7 +103,7 @@ section{
   overflow: hidden;
 }
 
-.pokeball-position{
+.pokeball-position {
   width: 85px;
   height: 85px;
   border-radius: 50%;
@@ -110,7 +116,7 @@ section{
   animation-timing-function: linear;
 }
 
-.pokeball-rotate{
+.pokeball-rotate {
   margin: 0;
   width: 70px;
   height: 70px;
@@ -126,11 +132,11 @@ section{
   animation-timing-function: linear;
 }
 
-.pokeball-position:hover{
+.pokeball-position:hover {
   animation-play-state: paused;
 }
 
-.top{
+.top {
   width: 63px;
   height: 30px;
   background-color: crimson;
@@ -146,7 +152,7 @@ section{
   animation-timing-function: ease;
 }
 
-.center{
+.center {
   width: 12px;
   height: 12px;
   background-color: whitesmoke;
@@ -163,7 +169,7 @@ section{
   animation-direction: alternate;
 }
 
-.bottom{
+.bottom {
   width: 63px;
   height: 30px;
   background-color: rgb(231, 236, 245);
@@ -174,135 +180,135 @@ section{
   z-index: 1;
 }
 
-@keyframes pokeball-position{
-  0%{
+@keyframes pokeball-position {
+  0% {
     transform: translate(-70vw, -10vh);
   }
 
-  10%{
+  10% {
     transform: translate(70vw, 25vh);
   }
 
-  20%{
+  20% {
     transform: translate(-70vw, 40vh);
   }
 
-  30%{
+  30% {
     transform: translate(70vw, -35vh);
   }
 
-  40%{
+  40% {
     transform: translate(-70vw, -40vh);
   }
 
-  50%{
+  50% {
     transform: translate(70vw, -30vh);
   }
 
-  60%{
+  60% {
     transform: translate(-70vw, -15vh);
   }
 
-  70%{
+  70% {
     transform: translate(70vw, 0vh);
   }
 
-  80%{
+  80% {
     transform: translate(-70vw, 10vh);
   }
 
-  90%{
+  90% {
     transform: translate(70vw, 25vh);
   }
 
-  100%{
+  100% {
     transform: translate(-70vw, 40vh);
   }
 
 }
 
-@keyframes pokeball-rotate{
+@keyframes pokeball-rotate {
 
-  0%{
+  0% {
     transform: rotate(0deg);
   }
 
-  10%{
+  10% {
     transform: rotate(36deg);
   }
 
-  20%{
+  20% {
     transform: rotate(72deg);
   }
 
-  30%{
+  30% {
     transform: rotate(108deg);
   }
 
-  40%{
+  40% {
     transform: rotate(144deg);
   }
 
-  50%{
+  50% {
     transform: rotate(180deg);
   }
 
-  60%{
+  60% {
     transform: rotate(216deg);
   }
 
-  70%{
+  70% {
     transform: rotate(252deg);
   }
 
-  80%{
+  80% {
     transform: rotate(288deg);
   }
 
-  90%{
+  90% {
     transform: rotate(324deg);
   }
 
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
 
-@keyframes center-pokeball{
-  0%{
+@keyframes center-pokeball {
+  0% {
     background-color: rgb(218, 95, 119);
   }
 
-  100%{
+  100% {
     background-color: white;
   }
 }
 
-@keyframes top-pokeball{
-  0%{
+@keyframes top-pokeball {
+  0% {
     background-color: crimson;
   }
 
-  25%{
+  25% {
     background-color: rgb(20, 50, 220);
   }
 
-  50%{
+  50% {
     background-color: rgb(37, 220, 20);
   }
 
-  75%{
+  75% {
     background-color: rgb(248, 232, 10);
   }
 
-  100%{
+  100% {
     background-color: rgb(83, 80, 80);
   }
 
 
 }
 
-.modal{
+.modal {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -314,7 +320,7 @@ section{
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-info{
+.modal-info {
   width: 100%;
   height: 146px;
   margin: 1.3rem 0;
@@ -323,16 +329,17 @@ section{
   align-items: center;
 }
 
-.img-modal-container{
+.img-modal-container {
   width: 100px;
   height: 150px;
 }
 
-.img-modal-container img{
+.img-modal-container img {
   width: 100%;
+  height: 160px;
 }
 
-.container{
+.container {
   width: 250px;
   height: 400px;
   padding: 1rem;
@@ -347,7 +354,7 @@ section{
   align-items: flex-end;
 }
 
-.input-modal-container{
+.input-modal-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -355,7 +362,7 @@ section{
   align-items: center;
 }
 
-.input-modal-container button{
+.input-modal-container button {
   margin-top: 1rem;
   background-color: rgb(20, 163, 220);
   border-radius: 6px;
@@ -368,7 +375,7 @@ section{
   cursor: pointer;
 }
 
-.name-user{
+.name-user {
   background-color: whitesmoke;
   border: 1px solid gray;
   border-radius: 4px;
@@ -378,7 +385,7 @@ section{
   width: 90%;
 }
 
-.user-welcome{
+.user-welcome {
   width: 90%;
   height: 45px;
   border-radius: 4px;
@@ -393,7 +400,7 @@ section{
   margin-right: auto;
 }
 
-.user-welcome p{
+.user-welcome p {
   font-size: 0.7rem;
   display: block;
   white-space: nowrap;
@@ -401,20 +408,24 @@ section{
   width: 18ch;
 
   animation: typing-welcome 2s steps(18),
-  blink .5s infinite alternate ease-in-out;
+    blink .5s infinite alternate ease-in-out;
 
   overflow: hidden;
 }
 
 @keyframes typing-welcome {
-  from { width: 0 }
+  from {
+    width: 0
+  }
 }
 
 @keyframes blink {
-  50% { border-color: crimson;}
+  50% {
+    border-color: crimson;
+  }
 }
 
-.close{
+.close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -422,7 +433,124 @@ section{
   cursor: pointer;
 }
 
+/*---------------- POKEDEX ---------------*/
 
+.top-container-pokedex {
+  width: 100%;
+  display: flex;
+}
 
+.blue-btn {
+  position: absolute;
+  top: 7px;
+  left: 15px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 5px solid gray;
+  background-color: rgb(20, 107, 220);
+}
 
+.green-btn {
+  position: absolute;
+  top: 11px;
+  left: 90px;
+  width: 20px;
+  height: 20px;
+  border: 3px solid gray;
+  border-radius: 50%;
+  background-color: rgb(37, 220, 20);
+}
 
+.yelow-btn {
+  position: absolute;
+  top: 45px;
+  left: 90px;
+  width: 20px;
+  height: 23px;
+  border: 2px solid whitesmoke;
+  border-radius: 6px;
+  background-color: rgb(220, 200, 20);
+}
+
+.top-pokedex1 {
+  width: 130px;
+  height: 80px;
+  background-color: crimson;
+  border-radius: 0 0 10px 0;
+}
+
+.top-pokedex2 {
+  width: calc(100% - 130px);
+  height: 60px;
+  background-color: crimson;
+}
+
+.screen-user {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgb(20, 207, 220);
+  width: 170px;
+  height: 35px;
+  display: flex;
+  border-radius: 10px;
+  border: 3px solid rgb(68, 66, 66);
+  justify-content: center;
+  align-items: center;
+}
+
+.screen-user p {
+  margin: 0;
+}
+
+.pokemons-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+
+.pokemon-card {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  border: 3px solid gray;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  box-shadow: 0 5px 20px rgba(211, 231, 31, 0.5);
+}
+
+.pokemon-card p {
+  margin: 0.4rem;
+  color: red;
+  display: flex;
+  font-size: 0.8rem;
+}
+
+.poke-image {
+  width: 100%;
+  height: 150px;
+  background-color: crimson;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid gray;
+  border-radius: 6px 6px 0 0;
+}
+
+.poke-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
