@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const PokemonCard = ({ pokeData }) => {
 
+    const navigate = useNavigate();
     const [pokemon, setPokemon] = useState("");
 
     useEffect(() => {
@@ -12,19 +14,24 @@ const PokemonCard = ({ pokeData }) => {
             .catch(error => console.log(error.response))
     }, []);
 
+    const detailRoute = () => {
+        navigate(`/pokedex/${pokemon.id}`)
+    }
+
     return (
-        <Link to={`/pokedex/${pokemon.id}`} className='link'>
+        <div className='link' onClick={detailRoute}>
             <div className='pokemon-card'>
                 <div className='poke-image'>
-                    <img src={pokemon.sprites?.front_default} alt="" />
+                    <img src={pokemon.sprites?.other.home.front_default} alt="" />
                 </div>
                 <div className='poke-center'></div>
                 <div className='name-cont-p'>
                     <p>{pokemon.name}</p>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 };
 
 export default PokemonCard;
+
