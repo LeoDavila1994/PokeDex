@@ -763,7 +763,7 @@ section {
   "n4 n4 n4";
 
   gap: 10px;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   margin-bottom: 3rem;
 }
 
@@ -786,10 +786,12 @@ span{
   justify-content: center;
   align-items: center;
   font-size: 0.7rem;
+  background-color: rgb(77, 153, 108)
 }
 
 .item2{
   grid-area: n2;
+  background-color: orange;
 }
 
 .item3{
@@ -799,6 +801,7 @@ span{
   align-items: center;
   overflow: hidden;
   position: relative;
+  background-color: #14cfdc;
 }
 
 .shuffle{
@@ -819,6 +822,7 @@ span{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(20, 163, 220);
 }
 
 .evo-card{
@@ -850,7 +854,7 @@ span{
     "n4 n4 n4";
 
     gap: 10px;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     margin-bottom: 3rem;
   }
 

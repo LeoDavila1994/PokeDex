@@ -17,9 +17,6 @@ const PokemonDetail = () => {
     const [ random2, setRandom2 ] =useState(Math.floor(Math.random() * 50));
     const [ random3, setRandom3 ] =useState(Math.floor(Math.random() * 50));
     const [ random4, setRandom4 ] =useState(Math.floor(Math.random() * 50));
-    const [ r, setR ] =useState(Math.floor(Math.random() * 255));
-    const [ g, setG ] =useState(Math.floor(Math.random() * 255));
-    const [ b, setB ] =useState(Math.floor(Math.random() * 255));
 
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
@@ -34,10 +31,6 @@ const PokemonDetail = () => {
             setRandom2(random2);
             setRandom3(random3);
             setRandom4(random4);
-            setR(r);
-            setG(g);
-            setB(b);
-
     }, []);
 
     return (
@@ -54,11 +47,11 @@ const PokemonDetail = () => {
             </div>
             <div className='container-pokedetail'>
                 <div className='grid'>
-                    <div className='item item1' style={{backgroundColor: `rgb(${r},${g},${b})`}}>
+                    <div className='item item1'>
                         <span><p>Name:</p></span>
                         <p>{pokemon.name}</p>
                     </div>
-                    <div className='item item2' style={{backgroundColor: `rgb(${b},${r},${g})`}}>
+                    <div className='item item2'>
                         <span><p>Base Experience:</p></span>
                         <p>{pokemon.base_experience} XP.</p>
                         <span><p>Weigth:</p></span>
@@ -74,10 +67,10 @@ const PokemonDetail = () => {
                         <p>{pokemon.types?.[0]?.type.name}.</p>
                         <p>{pokemon.types?.[1]?.type.name}.</p>
                     </div>
-                    <div className='item item3' style={{backgroundColor: `rgb(${g},${b},${r})`}}>
+                    <div className='item item3'>
                         <img src={pokemon.sprites?.other.home.front_default} alt="" />
                     </div>
-                    <div className='item item4' style={{backgroundColor: `rgb(${r},${b},${g})`}}>
+                    <div className='item item4'>
                         <span><p>Common Area:</p></span>
                         {locations[0]?.location_area.name? (
                             <div>
