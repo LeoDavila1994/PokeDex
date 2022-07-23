@@ -31,7 +31,7 @@ const PokemonDetail = () => {
             setRandom2(random2);
             setRandom3(random3);
             setRandom4(random4);
-    }, []);
+    }, [ id ]);
 
     return (
         <section>

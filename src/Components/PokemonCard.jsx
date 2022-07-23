@@ -19,7 +19,7 @@ const PokemonCard = ({ pokeData }) => {
     }
 
     return (
-        <div className='link' onClick={detailRoute}>
+        <div onClick={detailRoute}>
             <div className='pokemon-card'>
                 <div className='poke-image'>
                     <img src={pokemon.sprites?.other.home.front_default} alt="" />
