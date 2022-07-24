@@ -8,16 +8,9 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [soundTrack, setSoundTrack] = useState(true)
-
-  const audio = () => {
-    setSoundTrack(!soundTrack);
-  }
-
   return (
     <HashRouter>
-      <button className='btn-sound' onClick={audio}><i className="fa-solid fa-volume-high"></i></button>
-      {soundTrack ? (<audio src="./src/Pist/PokePist.mp3" autoPlay></audio>) : <></>}
+      <audio src="./src/Pist/PokePist.mp3" autoPlay></audio>
       <Routes>
         <Route path='/' element={<LogIn />} />
         <Route element={<ProtectedRoutes />}>
