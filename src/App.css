@@ -146,7 +146,7 @@ section {
   top: 1px;
 
   animation-name: top-pokeball;
-  animation-duration: 20s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease;
@@ -1089,12 +1089,6 @@ span{
   background-color: rgb(20, 163, 220);
 }
 
-.evo-card{
-  width: 50px;
-  min-height: 50px;
-  background-color: red;
-}
-
 @media (min-width: 576px){
   .item3 img {
     width: 310.25px;
@@ -1142,19 +1136,5 @@ span{
     color: crimson;
     font-size: 0.9rem;
   }
-
-  .pokeball-position {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    background-color: transparent;
-    border: 0;
-    animation-name: pokeball-position;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-  }
-
 }
 
