@@ -146,7 +146,7 @@ section {
   top: 1px;
 
   animation-name: top-pokeball;
-  animation-duration: 10s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease;
