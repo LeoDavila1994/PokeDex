@@ -20,6 +20,7 @@ const Pokedex = () => {
         axios.get("https://pokeapi.co/api/v2/type/")
             .then(res => setPokemonType(res.data.results))
             .catch(error => console.log(error.response))
+
     }, []);
 
     const [page, setPage] = useState(1);
