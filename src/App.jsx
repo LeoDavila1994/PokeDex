@@ -9,6 +9,7 @@ function App() {
 
   return (
     <HashRouter>
+      <audio src="./src/Pist/PokePist.mp3" autoPlay></audio>
       <Routes>
         <Route path='/' element={<LogIn />} />
         <Route element={<ProtectedRoutes />}>

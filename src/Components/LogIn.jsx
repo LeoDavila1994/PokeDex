@@ -17,7 +17,7 @@ const LogIn = () => {
         const loader = () => {
             setIsLoading(false);
         }
-        setTimeout(loader, 3000);
+        setTimeout(loader, 2000);
         setPutName(!putName)
     }, []);
 
@@ -68,17 +68,17 @@ const LogIn = () => {
                                                 <button className='close' onClick={showModal}>B</button>
                                             </div>
                                         ) : (<div className='without-name'>
-                                                <div className='container-put-name'>
-                                                    <p>You need put some name</p>
-                                                </div>
-                                                <div className='inst-screen'>
-                                                    <p>Press to Continue</p>
-                                                </div>
-                                                <button className='a-btn2'>A</button>
-                                                <div className='close2'>B</div>
-                                                <button className='close3' onClick={() => setPutName(!putName)}>B</button>
-                                                <button className='a-btn' onClick={() => setPutName(!putName)}>A</button>
+                                            <div className='container-put-name'>
+                                                <p>You need put some name</p>
                                             </div>
+                                            <div className='inst-screen'>
+                                                <p>Press to Continue</p>
+                                            </div>
+                                            <button className='a-btn2'>A</button>
+                                            <div className='close2'>B</div>
+                                            <button className='close3' onClick={() => setPutName(!putName)}>B</button>
+                                            <button className='a-btn' onClick={() => setPutName(!putName)}>A</button>
+                                        </div>
                                         )}
                                     </div>
                                     <div className='horizon'></div>
