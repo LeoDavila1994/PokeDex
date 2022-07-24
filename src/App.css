@@ -110,7 +110,7 @@ section {
   background-color: transparent;
   border: 0;
   animation-name: pokeball-position;
-  animation-duration: 10s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: linear;
@@ -146,7 +146,7 @@ section {
   top: 1px;
 
   animation-name: top-pokeball;
-  animation-duration: 30s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease;
@@ -1050,12 +1050,12 @@ span{
   justify-content: center;
   align-items: center;
   font-size: 0.7rem;
-  background-color: rgb(77, 153, 108)
+  background-color: rgb(31, 148, 156)
 }
 
 .item2{
   grid-area: n2;
-  background-color: orange;
+  background-color: rgb(235, 164, 33);
 }
 
 .item3{
@@ -1065,7 +1065,6 @@ span{
   align-items: center;
   overflow: hidden;
   position: relative;
-  background-color: #14cfdc;
 }
 
 .shuffle{
@@ -1086,7 +1085,7 @@ span{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(20, 163, 220);
+  background-color: rgb(21, 56, 70);
 }
 
 @media (min-width: 576px){

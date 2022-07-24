@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 const PokemonDetail = () => {
 
     const userName = useSelector(state => state.userName);
+    let color ="crimson";
 
     const { id } = useParams();
 
@@ -32,6 +33,50 @@ const PokemonDetail = () => {
             setRandom3(random3);
             setRandom4(random4);
     }, [ id ]);
+
+    if(pokemon.types?.[0].type.name === "normal"){
+        color = "#d9b5b0"
+    } else if (pokemon.types?.[0].type.name === "fighting"){
+        color = "#ad84db"
+    } else if (pokemon.types?.[0].type.name === "flying"){
+        color = "#76c2db"
+    } else if (pokemon.types?.[0].type.name === "poison"){
+        color = "#4c3080"
+    } else if (pokemon.types?.[0].type.name === "ground"){
+        color = "#85626c"
+    } else if (pokemon.types?.[0].type.name === "rock"){
+        color = "#5c5a5a"
+    } else if (pokemon.types?.[0].type.name === "bug"){
+        color = "#cde6ae"
+    } else if (pokemon.types?.[0].type.name === "ghost"){
+        color = "#160733"
+    } else if (pokemon.types?.[0].type.name === "steel"){
+        color = "#3f4952"
+    } else if (pokemon.types?.[0].type.name === "fire"){
+        color = "#c23e06"
+    } else if (pokemon.types?.[0].type.name === "water"){
+        color = "#24758a"
+    } else if (pokemon.types?.[0].type.name === "grass"){
+        color = "#21a639"
+    } else if (pokemon.types?.[0].type.name === "electric"){
+        color = "#eff556"
+    } else if (pokemon.types?.[0].type.name === "psychic"){
+        color = "#db8cba"
+    } else if (pokemon.types?.[0].type.name === "ice"){
+        color = "#0e4f99"
+    } else if (pokemon.types?.[0].type.name === "dragon"){
+        color = "#edb50c"
+    } else if (pokemon.types?.[0].type.name === "dark"){
+        color = "#040921"
+    } else if (pokemon.types?.[0].type.name === "fairy"){
+        color = "#91ffde"
+    } else if (pokemon.types?.[0].type.name === "unknown"){
+        color = "#000000"
+    } else if (pokemon.types?.[0].type.name === "shadow"){
+        color = "#383636"
+    } else {
+        color = "crimson"
+    }
 
     return (
         <section>
@@ -67,7 +112,7 @@ const PokemonDetail = () => {
                         <p>{pokemon.types?.[0]?.type.name}.</p>
                         <p>{pokemon.types?.[1]?.type.name}.</p>
                     </div>
-                    <div className='item item3'>
+                    <div className='item item3' style={{background: `${color}`}}>
                         <img src={pokemon.sprites?.other.home.front_default} alt="" />
                     </div>
                     <div className='item item4'>
