@@ -13,7 +13,7 @@ const Pokedex = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("https://pokeapi.co/api/v2/pokemon/")
+        axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1154")
             .then(res => setPokemons(res.data.results))
             .catch(error => console.log(error.response))
 
@@ -23,15 +23,19 @@ const Pokedex = () => {
     }, []);
 
     const [page, setPage] = useState(1);
+    const [ indexOne, setIndexOne ] = useState(1);
+    const [ indexTwo, setIndexTwo ] = useState (indexOne + 4)
     const lastIndex = page * 10;
     const firstIndex = lastIndex - 10;
 
     const nextPage = () => {
-        setPage(page + 1);
+        setIndexOne(indexOne + 5);
+        setIndexTwo(indexTwo + 5);
     }
 
     const previousPage = () => {
-        setPage(page - 1);
+        setIndexOne(indexOne - 5);
+        setIndexTwo(indexTwo - 5);
     }
 
     const filterType = e => {
@@ -43,7 +47,7 @@ const Pokedex = () => {
     const lastPage = Math.ceil(pokemons.length / 10);
 
     const numberPage = [];
-    for (let i = 1; i <= lastPage; i++) {
+    for (let i = indexOne; i <= indexTwo ; i++) {
         numberPage.push(i);
     }
 
@@ -65,8 +69,6 @@ const Pokedex = () => {
         }
 
     }
-
-    console.log(pokemonPagination)
 
     return (
         <section>
@@ -110,7 +112,7 @@ const Pokedex = () => {
                             <PokemonCard key={pokemon.url? pokemon.url : pokemon.pokemon.url} pokeData={pokemon.url? pokemon.url : pokemon.pokemon.url} />
                         ))}
                         <div className='pagination-container'>
-                            <button className='poke-btn' onClick={previousPage} disabled={page === 1}><i className="fa-solid fa-angle-left"></i></button>
+                            <button className='poke-btn' onClick={previousPage} disabled={indexOne === 1}><i className="fa-solid fa-angle-left"></i></button>
                             {numberPage.map(number => (
                                 <div key={number} className="numPage" onClick={() => setPage(number)}>
                                     <p>{number}</p>
