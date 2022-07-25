@@ -8,7 +8,6 @@ body {
 
 section {
   width: 100%;
-  height: 100vh;
   font-family: 'Press Start 2P';
   position: relative;
 }
@@ -870,7 +869,7 @@ section {
 
 .select-list{
   width: 100%;
-  height: 500px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -879,13 +878,8 @@ section {
   text-align: center;
 }
 
-.select-list p{
-  line-height: 2.5rem;
-}
-
 .pokemons-container {
   width: 100%;
-  height: calc(100vh - 214px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -951,10 +945,21 @@ section {
 
 .pagination-container{
   width: 100%;
+  height: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.pagination-container p{
+  margin: 0 5px;
+}
+
+.pagination-container p:hover{
+  color: crimson;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 .poke-btn{

@@ -26,21 +26,41 @@ const Pokedex = () => {
     const [page, setPage] = useState(1);
     const lastIndex = page * 10;
     const firstIndex = lastIndex - 10;
+    const [limitOne, setLimitOne] = useState(1);
+    const [limitTwo, setLimitTwo] = useState(5)
 
     const nextPage = () => {
-        setPage( page + 1)
+        setPage(page + 1)
+        setLimitOne(limitOne + 1)
+        setLimitTwo(limitTwo + 1)
     }
 
     const previousPage = () => {
-        setPage( page - 1)
+        setPage(page - 1)
+        setLimitOne(limitOne - 1)
+        setLimitTwo(limitTwo - 1)
+
     }
+    console.log("page = " + page);
+    console.log("limit 1 = " + limitOne);
+    console.log("limit 2 = " + limitTwo);
 
     const pokemonPagination = pokemons.slice(firstIndex, lastIndex);
     const lastPage = Math.ceil(pokemons.length / 10);
 
+    const numberPage = [];
+
+    for (let i = limitOne; i <= limitTwo; i++) {
+        numberPage.push(i);
+    }
+
     const filterType = e => {
         axios.get(e.target.value)
             .then(res => setPokemons(res.data.pokemon))
+
+        setPage(1);
+        setLimitOne(1);
+        setLimitTwo(5);
 
     }
 
@@ -106,6 +126,7 @@ const Pokedex = () => {
                         ))}
                         <div className='pagination-container'>
                             <button className='poke-btn' onClick={previousPage} disabled={page === 1}><i className="fa-solid fa-angle-left"></i></button>
+                            {numberPage.map(number => (<div onClick={() => setPage(number)}><p>{number}</p></div>))}
                             <button className='poke-btn' onClick={nextPage} disabled={page === lastPage}><i className="fa-solid fa-angle-right"></i></button>
                         </div>
                     </div>
