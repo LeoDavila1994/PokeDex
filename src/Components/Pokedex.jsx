@@ -24,42 +24,25 @@ const Pokedex = () => {
     }, []);
 
     const [page, setPage] = useState(1);
-    const [indexOne, setIndexOne] = useState(1);
-    const [indexTwo, setIndexTwo] = useState(indexOne + 4)
-    const [match, setMatch ] = useState(5);
     const lastIndex = page * 10;
     const firstIndex = lastIndex - 10;
 
     const nextPage = () => {
-
-        setIndexOne(indexOne + 5);
-        setIndexTwo(indexTwo + 5);
-        setMatch(match + 5)
+        setPage( page + 1)
     }
 
     const previousPage = () => {
-        setIndexOne(indexOne - 5);
-        setIndexTwo(indexTwo - 5);
-        setMatch(match - 5)
+        setPage( page - 1)
     }
 
     const pokemonPagination = pokemons.slice(firstIndex, lastIndex);
     const lastPage = Math.ceil(pokemons.length / 10);
 
-    console.log("page = " + page)
-    console.log("last page = " + lastPage);
-    console.log("Match =" + match);
-
-    const numberPage = []
-    for (let i = indexOne; i <= indexTwo; i++) {
-        numberPage.push(i);
-    }
-
     const filterType = e => {
         axios.get(e.target.value)
             .then(res => setPokemons(res.data.pokemon))
-    }
 
+    }
 
     const [search, setSearch] = useState("");
 
@@ -98,7 +81,7 @@ const Pokedex = () => {
                         <div className='container-modal'>
                             <div className='x' onClick={() => setTypeModal(!typeModal)}><i className="fa-regular fa-circle-xmark"></i></div>
                             <div className='select-list'>
-                                <p>WRONG NAME!</p>
+                                <p>Different type or wrong name!</p>
                             </div>
                         </div>
                     </div>
@@ -122,13 +105,8 @@ const Pokedex = () => {
                             <PokemonCard key={pokemon.url ? pokemon.url : pokemon.pokemon.url} pokeData={pokemon.url ? pokemon.url : pokemon.pokemon.url} />
                         ))}
                         <div className='pagination-container'>
-                            <button className='poke-btn' onClick={previousPage} disabled={indexOne === 1}><i className="fa-solid fa-angle-left"></i></button>
-                            {numberPage.map(number => (
-                                <div key={number} className="numPage" onClick={() => setPage(number)}>
-                                    <p>{number}</p>
-                                </div>
-                            ))}
-                            <button className='poke-btn' onClick={nextPage} disabled={match >= lastPage}><i className="fa-solid fa-angle-right"></i></button>
+                            <button className='poke-btn' onClick={previousPage} disabled={page === 1}><i className="fa-solid fa-angle-left"></i></button>
+                            <button className='poke-btn' onClick={nextPage} disabled={page === lastPage}><i className="fa-solid fa-angle-right"></i></button>
                         </div>
                     </div>
                 </>

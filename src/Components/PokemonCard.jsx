@@ -34,7 +34,7 @@ const PokemonCard = ({ pokeData }) => {
     } else if (pokemon.types?.[0].type.name === "steel"){
         color = "#3f4952"
     } else if (pokemon.types?.[0].type.name === "fire"){
-        color = "#c23e06"
+        color = "#e87348"
     } else if (pokemon.types?.[0].type.name === "water"){
         color = "#24758a"
     } else if (pokemon.types?.[0].type.name === "grass"){

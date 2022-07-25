@@ -4,13 +4,12 @@ import LogIn from './Components/LogIn';
 import Pokedex from './Components/Pokedex';
 import PokemonDetail from './Components/PokemonDetail';
 import ProtectedRoutes from './Components/ProtectedRoutes';
-import { useEffect, useState } from 'react';
+
 
 function App() {
 
   return (
     <HashRouter>
-      <audio src="./src/Pist/PokePist.mp3" autoPlay></audio>
       <Routes>
         <Route path='/' element={<LogIn />} />
         <Route element={<ProtectedRoutes />}>

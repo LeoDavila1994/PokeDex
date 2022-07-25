@@ -876,17 +876,11 @@ section {
   align-items: center;
   color: whitesmoke;
   font-size: 1.5rem;
+  text-align: center;
 }
 
-.select-list option:hover{
-  cursor: pointer;
-  color: rgb(60, 134, 219);
-  font-size: 1rem;
-  border-top: 1px solid rgb(60, 134, 219);
-  border-bottom: 1px solid rgb(60, 134, 219);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.select-list p{
+  line-height: 2.5rem;
 }
 
 .pokemons-container {
