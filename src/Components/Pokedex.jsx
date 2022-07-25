@@ -4,7 +4,7 @@ import axios from "axios";
 import PokemonCard from "./PokemonCard"
 import { useNavigate } from 'react-router-dom';
 
-const Pokedex = ({ screen }) => {
+const Pokedex = () => {
 
     const userName = useSelector(state => state.userName);
     const [pokemons, setPokemons] = useState([]);
@@ -123,7 +123,7 @@ const Pokedex = ({ screen }) => {
                     </div>
                     <div className='pokemons-container'>
                         {pokemonPagination.map(pokemon => (
-                            <PokemonCard key={pokemon.url ? pokemon.url : pokemon.pokemon.url} pokeData={pokemon.url ? pokemon.url : pokemon.pokemon.url} screen={screen} />
+                            <PokemonCard key={pokemon.url ? pokemon.url : pokemon.pokemon.url} pokeData={pokemon.url ? pokemon.url : pokemon.pokemon.url}/>
                         ))}
                         <div className='pagination-container'>
                             <button className='poke-btn' onClick={previousPage} disabled={page === 1}><i className="fa-solid fa-angle-left"></i></button>

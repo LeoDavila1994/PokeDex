@@ -40,3 +40,6 @@ const Settings = () => {
 };
 
 export default Settings;
+
+{/* <div className='screen-mode' onClick={change}><i className="fa-solid fa-moon"></i></div> */}
+{/* <div className='screen-mode2' onClick={change}><i className="fa-solid fa-sun"></i></div> */}

@@ -3,7 +3,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #194868;
+  background-color: #d0fffd;
 }
 
 section {
@@ -752,8 +752,8 @@ section {
 .gear{
   position: absolute;
   color: whitesmoke;
-  right: 270px;
-  top: 15px;
+  right: 145px;
+  top: 69px;
   width: 30px;
   height: 30px;
   background-color: #0d2d5486;

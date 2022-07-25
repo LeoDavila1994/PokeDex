@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const PokemonCard = ({ pokeData, screen }) => {
+const PokemonCard = ({ pokeData }) => {
 
     const navigate = useNavigate();
     const [pokemon, setPokemon] = useState("");
@@ -66,27 +66,15 @@ const PokemonCard = ({ pokeData, screen }) => {
 
     return (
         <div onClick={detailRoute}>
-            {screen ? (
-                <div className='pokemon-card1'>
-                    <div className='poke-image' style={{ background: `${color}` }}>
-                        <img src={pokemon.sprites?.other.home.front_default} alt="" />
-                    </div>
-                    <div className='poke-center'></div>
-                    <div className='name-cont-p1'>
-                        <p>{pokemon.name}</p>
-                    </div>
+            <div className='pokemon-card1'>
+                <div className='poke-image' style={{ background: `${color}` }}>
+                    <img src={pokemon.sprites?.other.home.front_default} alt="" />
                 </div>
-            ) : (
-                <div className='pokemon-card2'>
-                    <div className='poke-image' style={{ background: `${color}` }}>
-                        <img src={pokemon.sprites?.other.home.front_default} alt="" />
-                    </div>
-                    <div className='poke-center'></div>
-                    <div className='name-cont-p2'>
-                        <p>{pokemon.name}</p>
-                    </div>
+                <div className='poke-center'></div>
+                <div className='name-cont-p1'>
+                    <p>{pokemon.name}</p>
                 </div>
-            )}
+            </div>
         </div>
     );
 };
