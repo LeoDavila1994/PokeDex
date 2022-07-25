@@ -41,12 +41,14 @@ const Pokedex = () => {
         setLimitTwo(limitTwo - 1)
 
     }
-    console.log("page = " + page);
-    console.log("limit 1 = " + limitOne);
-    console.log("limit 2 = " + limitTwo);
 
     const pokemonPagination = pokemons.slice(firstIndex, lastIndex);
     const lastPage = Math.ceil(pokemons.length / 10);
+
+    console.log("page = " + page);
+    console.log("limit 1 = " + limitOne);
+    console.log("limit 2 = " + limitTwo);
+    console.log("last page = " + lastPage);
 
     const numberPage = [];
 
@@ -127,7 +129,7 @@ const Pokedex = () => {
                         <div className='pagination-container'>
                             <button className='poke-btn' onClick={previousPage} disabled={page === 1}><i className="fa-solid fa-angle-left"></i></button>
                             {numberPage.map(number => (<div onClick={() => setPage(number)}><p>{number}</p></div>))}
-                            <button className='poke-btn' onClick={nextPage} disabled={page === lastPage}><i className="fa-solid fa-angle-right"></i></button>
+                            <button className='poke-btn' onClick={nextPage} disabled={limitTwo === lastPage}><i className="fa-solid fa-angle-right"></i></button>
                         </div>
                     </div>
                 </>

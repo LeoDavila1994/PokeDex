@@ -924,6 +924,7 @@ section {
   display: flex;
   justify-content: center;
   color: crimson;
+  text-align: center;
 }
 
 .poke-image {
