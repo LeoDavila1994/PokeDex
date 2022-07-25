@@ -9,7 +9,7 @@ const Pokedex = () => {
     const userName = useSelector(state => state.userName);
     const [pokemons, setPokemons] = useState([]);
     const [typeModal, setTypeModal] = useState(false);
-    const [ pokemonType, setPokemonType] = useState([]);
+    const [pokemonType, setPokemonType] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,19 +24,35 @@ const Pokedex = () => {
     }, []);
 
     const [page, setPage] = useState(1);
-    const [ indexOne, setIndexOne ] = useState(1);
-    const [ indexTwo, setIndexTwo ] = useState (indexOne + 4)
+    const [indexOne, setIndexOne] = useState(1);
+    const [indexTwo, setIndexTwo] = useState(indexOne + 4)
+    const [match, setMatch ] = useState(5);
     const lastIndex = page * 10;
     const firstIndex = lastIndex - 10;
 
     const nextPage = () => {
+
         setIndexOne(indexOne + 5);
         setIndexTwo(indexTwo + 5);
+        setMatch(match + 5)
     }
 
     const previousPage = () => {
         setIndexOne(indexOne - 5);
         setIndexTwo(indexTwo - 5);
+        setMatch(match - 5)
+    }
+
+    const pokemonPagination = pokemons.slice(firstIndex, lastIndex);
+    const lastPage = Math.ceil(pokemons.length / 10);
+
+    console.log("page = " + page)
+    console.log("last page = " + lastPage);
+    console.log("Match =" + match);
+
+    const numberPage = []
+    for (let i = indexOne; i <= indexTwo; i++) {
+        numberPage.push(i);
     }
 
     const filterType = e => {
@@ -44,13 +60,6 @@ const Pokedex = () => {
             .then(res => setPokemons(res.data.pokemon))
     }
 
-    const pokemonPagination = pokemons.slice(firstIndex, lastIndex);
-    const lastPage = Math.ceil(pokemons.length / 10);
-
-    const numberPage = [];
-    for (let i = indexOne; i <= indexTwo ; i++) {
-        numberPage.push(i);
-    }
 
     const [search, setSearch] = useState("");
 
@@ -110,7 +119,7 @@ const Pokedex = () => {
                     </div>
                     <div className='pokemons-container'>
                         {pokemonPagination.map(pokemon => (
-                            <PokemonCard key={pokemon.url? pokemon.url : pokemon.pokemon.url} pokeData={pokemon.url? pokemon.url : pokemon.pokemon.url} />
+                            <PokemonCard key={pokemon.url ? pokemon.url : pokemon.pokemon.url} pokeData={pokemon.url ? pokemon.url : pokemon.pokemon.url} />
                         ))}
                         <div className='pagination-container'>
                             <button className='poke-btn' onClick={previousPage} disabled={indexOne === 1}><i className="fa-solid fa-angle-left"></i></button>
@@ -119,7 +128,7 @@ const Pokedex = () => {
                                     <p>{number}</p>
                                 </div>
                             ))}
-                            <button className='poke-btn' onClick={nextPage} disabled={page === lastPage}><i className="fa-solid fa-angle-right"></i></button>
+                            <button className='poke-btn' onClick={nextPage} disabled={match >= lastPage}><i className="fa-solid fa-angle-right"></i></button>
                         </div>
                     </div>
                 </>
