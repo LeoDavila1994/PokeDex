@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { changeName } from '../store/slices/userName.slice';
 import { useNavigate } from 'react-router-dom';
 
-const LogIn = () => {
+const LogIn = (  {screen}  ) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -48,6 +48,7 @@ const LogIn = () => {
                     </div>
                 </div> : (
                     <div className='login-container'>
+                        <div className='Setts'><i className="fa-solid fa-gear"></i></div>
                         <div className='logo'></div>
                         {isVisible ? (
                             <div className='modal'>

@@ -2,11 +2,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const PokemonCard = ({ pokeData }) => {
+const PokemonCard = ({ pokeData, screen }) => {
 
     const navigate = useNavigate();
     const [pokemon, setPokemon] = useState("");
-    let color ="crimson";
+    let color = "crimson";
 
     useEffect(() => {
         axios.get(`${pokeData}`)
@@ -15,45 +15,45 @@ const PokemonCard = ({ pokeData }) => {
 
     }, []);
 
-    if(pokemon.types?.[0].type.name === "normal"){
+    if (pokemon.types?.[0].type.name === "normal") {
         color = "#d9b5b0"
-    } else if (pokemon.types?.[0].type.name === "fighting"){
+    } else if (pokemon.types?.[0].type.name === "fighting") {
         color = "#ad84db"
-    } else if (pokemon.types?.[0].type.name === "flying"){
+    } else if (pokemon.types?.[0].type.name === "flying") {
         color = "#76c2db"
-    } else if (pokemon.types?.[0].type.name === "poison"){
+    } else if (pokemon.types?.[0].type.name === "poison") {
         color = "#4c3080"
-    } else if (pokemon.types?.[0].type.name === "ground"){
+    } else if (pokemon.types?.[0].type.name === "ground") {
         color = "#85626c"
-    } else if (pokemon.types?.[0].type.name === "rock"){
+    } else if (pokemon.types?.[0].type.name === "rock") {
         color = "#5c5a5a"
-    } else if (pokemon.types?.[0].type.name === "bug"){
+    } else if (pokemon.types?.[0].type.name === "bug") {
         color = "#cde6ae"
-    } else if (pokemon.types?.[0].type.name === "ghost"){
+    } else if (pokemon.types?.[0].type.name === "ghost") {
         color = "#160733"
-    } else if (pokemon.types?.[0].type.name === "steel"){
+    } else if (pokemon.types?.[0].type.name === "steel") {
         color = "#3f4952"
-    } else if (pokemon.types?.[0].type.name === "fire"){
+    } else if (pokemon.types?.[0].type.name === "fire") {
         color = "#e87348"
-    } else if (pokemon.types?.[0].type.name === "water"){
+    } else if (pokemon.types?.[0].type.name === "water") {
         color = "#24758a"
-    } else if (pokemon.types?.[0].type.name === "grass"){
+    } else if (pokemon.types?.[0].type.name === "grass") {
         color = "#21a639"
-    } else if (pokemon.types?.[0].type.name === "electric"){
+    } else if (pokemon.types?.[0].type.name === "electric") {
         color = "#eff556"
-    } else if (pokemon.types?.[0].type.name === "psychic"){
+    } else if (pokemon.types?.[0].type.name === "psychic") {
         color = "#db8cba"
-    } else if (pokemon.types?.[0].type.name === "ice"){
+    } else if (pokemon.types?.[0].type.name === "ice") {
         color = "#0e4f99"
-    } else if (pokemon.types?.[0].type.name === "dragon"){
+    } else if (pokemon.types?.[0].type.name === "dragon") {
         color = "#edb50c"
-    } else if (pokemon.types?.[0].type.name === "dark"){
+    } else if (pokemon.types?.[0].type.name === "dark") {
         color = "#040921"
-    } else if (pokemon.types?.[0].type.name === "fairy"){
+    } else if (pokemon.types?.[0].type.name === "fairy") {
         color = "#91ffde"
-    } else if (pokemon.types?.[0].type.name === "unknown"){
+    } else if (pokemon.types?.[0].type.name === "unknown") {
         color = "#000000"
-    } else if (pokemon.types?.[0].type.name === "shadow"){
+    } else if (pokemon.types?.[0].type.name === "shadow") {
         color = "#383636"
     } else {
         color = "crimson"
@@ -66,15 +66,27 @@ const PokemonCard = ({ pokeData }) => {
 
     return (
         <div onClick={detailRoute}>
-            <div className='pokemon-card'>
-                <div className='poke-image' style={{background: `${color}`}}>
-                    <img src={pokemon.sprites?.other.home.front_default} alt="" />
+            {screen ? (
+                <div className='pokemon-card1'>
+                    <div className='poke-image' style={{ background: `${color}` }}>
+                        <img src={pokemon.sprites?.other.home.front_default} alt="" />
+                    </div>
+                    <div className='poke-center'></div>
+                    <div className='name-cont-p1'>
+                        <p>{pokemon.name}</p>
+                    </div>
                 </div>
-                <div className='poke-center'></div>
-                <div className='name-cont-p'>
-                    <p>{pokemon.name}</p>
+            ) : (
+                <div className='pokemon-card2'>
+                    <div className='poke-image' style={{ background: `${color}` }}>
+                        <img src={pokemon.sprites?.other.home.front_default} alt="" />
+                    </div>
+                    <div className='poke-center'></div>
+                    <div className='name-cont-p2'>
+                        <p>{pokemon.name}</p>
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };

@@ -4,7 +4,7 @@ import axios from "axios";
 import PokemonCard from "./PokemonCard"
 import { useNavigate } from 'react-router-dom';
 
-const Pokedex = () => {
+const Pokedex = ({ screen }) => {
 
     const userName = useSelector(state => state.userName);
     const [pokemons, setPokemons] = useState([]);
@@ -45,11 +45,6 @@ const Pokedex = () => {
     const pokemonPagination = pokemons.slice(firstIndex, lastIndex);
     const lastPage = Math.ceil(pokemons.length / 10);
 
-    console.log("page = " + page);
-    console.log("limit 1 = " + limitOne);
-    console.log("limit 2 = " + limitTwo);
-    console.log("last page = " + lastPage);
-
     const numberPage = [];
 
     for (let i = limitOne; i <= limitTwo; i++) {
@@ -82,7 +77,10 @@ const Pokedex = () => {
                 setSearch("");
             }
         }
+    }
 
+    const settings = () => {
+        navigate("/pokedex/settings")
     }
 
     return (
@@ -96,6 +94,7 @@ const Pokedex = () => {
                 <div className='screen-user'>
                     <p>{userName}</p>
                 </div>
+                <div className='gear' onClick={settings}><i className="fa-solid fa-gear"></i></div>
             </div>
             {typeModal ? (
                 <>
@@ -124,7 +123,7 @@ const Pokedex = () => {
                     </div>
                     <div className='pokemons-container'>
                         {pokemonPagination.map(pokemon => (
-                            <PokemonCard key={pokemon.url ? pokemon.url : pokemon.pokemon.url} pokeData={pokemon.url ? pokemon.url : pokemon.pokemon.url} />
+                            <PokemonCard key={pokemon.url ? pokemon.url : pokemon.pokemon.url} pokeData={pokemon.url ? pokemon.url : pokemon.pokemon.url} screen={screen} />
                         ))}
                         <div className='pagination-container'>
                             <button className='poke-btn' onClick={previousPage} disabled={page === 1}><i className="fa-solid fa-angle-left"></i></button>
