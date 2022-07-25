@@ -48,7 +48,6 @@ const LogIn = (  {screen}  ) => {
                     </div>
                 </div> : (
                     <div className='login-container'>
-                        <div className='Setts'><i className="fa-solid fa-gear"></i></div>
                         <div className='logo'></div>
                         {isVisible ? (
                             <div className='modal'>
