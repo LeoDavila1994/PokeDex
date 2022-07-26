@@ -66,12 +66,12 @@ const PokemonCard = ({ pokeData }) => {
 
     return (
         <div onClick={detailRoute}>
-            <div className='pokemon-card1'>
+            <div className='pokemon-card'>
                 <div className='poke-image' style={{ background: `${color}` }}>
                     <img src={pokemon.sprites?.other.home.front_default} alt="" />
                 </div>
                 <div className='poke-center'></div>
-                <div className='name-cont-p1'>
+                <div className='name-cont-p'>
                     <p>{pokemon.name}</p>
                 </div>
             </div>

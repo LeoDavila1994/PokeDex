@@ -23,7 +23,7 @@ const Settings = () => {
                     <div className='screen-user'>
                         <p>{userName}</p>
                     </div>
-                    <div className='gear' onClick={pokedex}><i className="fa-solid fa-gear"></i></div>
+                    <div className='gear2' onClick={pokedex}><i className="fa-solid fa-gear"></i></div>
                 </div>
             <div className='seting-main'>
                 <div className='container-setings'>
