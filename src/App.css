@@ -3,53 +3,13 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #d0fffd;
+  background-color: #646d6c;
 }
 
 section {
   width: 100%;
   font-family: 'Press Start 2P';
   position: relative;
-}
-
-.screen-mode{
-  position: absolute;
-  z-index: 70;
-  top: 15px;
-  right: 210px;
-  background-color: #0d2d5486;
-  color: white;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-
-.screen-mode2{
-  position: absolute;
-  z-index: 70;
-  top: 15px;
-  right: 210px;
-  background-color: #0d2d5486;
-  color: white;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-
-.screen-mode2:hover{
-  background-color: #0d2d54;
-  cursor: pointer;
-}
-
-.screen-mode:hover{
-  background-color: #0d2d54;
-  cursor: pointer;
 }
 
 .loader {
@@ -766,8 +726,36 @@ section {
 .gear2{
   position: absolute;
   color: whitesmoke;
-  right: 15px;
-  top: 70px;
+  right: 30px;
+  top: 30px;
+  width: 30px;
+  height: 30px;
+  background-color: #0d2d5486;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.gear3{
+  position: absolute;
+  color: whitesmoke;
+  right: 20px;
+  top: 0px;
+  width: 30px;
+  height: 30px;
+  background-color: #0d2d5486;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.screen-m{
+  position: absolute;
+  color: whitesmoke;
+  right: 140px;
+  top: 30px;
   width: 30px;
   height: 30px;
   background-color: #0d2d5486;
@@ -780,6 +768,14 @@ section {
 .top-container-pokedex {
   width: 100%;
   display: flex;
+}
+
+.top-container-pokedex2 {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .blue-btn {
@@ -1064,6 +1060,17 @@ section {
   cursor: pointer;
 }
 
+.gear3:hover{
+  background-color: #0d2d54;
+  cursor: pointer;
+}
+
+
+.screen-m:hover{
+  background-color: #0d2d54;
+  cursor: pointer;
+}
+
 .container-pokedetail{
   width: 100%;
   height: calc(100vh - 80px);
@@ -1168,12 +1175,12 @@ span{
 /*-------------- Settings -------------*/
 
 .seting-main{
-  background-image: url("https://gamersrd.com/wp-content/uploads/2016/09/cute-pokemon-wallpaper-gamersrd.jpg");
+  background-image: url("https://wallpaperaccess.com/full/21018.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1182,13 +1189,14 @@ span{
 .container-setings{
   width: 310px;
   height: 450px;
-  background-color: rgb(20, 220, 143);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .color-p{

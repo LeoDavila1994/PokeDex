@@ -11,6 +11,7 @@ const Pokedex = () => {
     const [typeModal, setTypeModal] = useState(false);
     const [pokemonType, setPokemonType] = useState([]);
     const navigate = useNavigate();
+    const screenMode = useSelector(state => state.screenMode);
 
     useEffect(() => {
         axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1154")
@@ -83,8 +84,17 @@ const Pokedex = () => {
         navigate("/pokedex/settings")
     }
 
+    let screenColor = "";
+
+    if (screenMode === true){
+        screenColor = "#d0fffd"
+    } else if (screenMode === false){
+        screenColor = "#2c2c2e"
+    };
+
+
     return (
-        <section>
+        <section style={{backgroundColor: `${screenColor}`}}>
             <div className='top-container-pokedex'>
                 <div className='top-pokedex1'></div>
                 <div className='top-pokedex2'></div>
