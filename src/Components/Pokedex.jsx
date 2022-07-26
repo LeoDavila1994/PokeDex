@@ -12,6 +12,7 @@ const Pokedex = () => {
     const [pokemonType, setPokemonType] = useState([]);
     const navigate = useNavigate();
     const screenMode = useSelector(state => state.screenMode);
+    const pokePage = useSelector(state => state.pokePage);
 
     useEffect(() => {
         axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1154")
@@ -25,8 +26,8 @@ const Pokedex = () => {
     }, []);
 
     const [page, setPage] = useState(1);
-    const lastIndex = page * 10;
-    const firstIndex = lastIndex - 10;
+    const lastIndex = page * pokePage;
+    const firstIndex = lastIndex - pokePage;
     const [limitOne, setLimitOne] = useState(1);
     const [limitTwo, setLimitTwo] = useState(5)
 
@@ -44,7 +45,7 @@ const Pokedex = () => {
     }
 
     const pokemonPagination = pokemons.slice(firstIndex, lastIndex);
-    const lastPage = Math.ceil(pokemons.length / 10);
+    const lastPage = Math.ceil(pokemons.length / pokePage);
 
     const numberPage = [];
 

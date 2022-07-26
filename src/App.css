@@ -726,11 +726,25 @@ section {
 .gear2{
   position: absolute;
   color: whitesmoke;
-  right: 30px;
+  right: 90px;
   top: 30px;
   width: 30px;
   height: 30px;
-  background-color: #0d2d5486;
+  background-color: rgba(220, 20, 60, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.audio{
+  position: absolute;
+  color: whitesmoke;
+  left: 30px;
+  top: 30px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(220, 20, 60, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -754,11 +768,11 @@ section {
 .screen-m{
   position: absolute;
   color: whitesmoke;
-  right: 140px;
+  left: 90px;
   top: 30px;
   width: 30px;
   height: 30px;
-  background-color: #0d2d5486;
+  background-color: rgba(220, 20, 60, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1004,6 +1018,22 @@ section {
   width: 110px;
   height: 110px;
   border-radius: 50%;
+
+  animation-name: img-poke;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes img-poke{
+  0% {
+    transform: rotate(1deg);
+  }
+
+  100%{
+    transform: rotate(-1deg);
+  }
 }
 
 .pagination-container{
@@ -1013,6 +1043,7 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 
 .pagination-container p{
@@ -1056,7 +1087,7 @@ section {
 }
 
 .gear2:hover{
-  background-color: #0d2d54;
+  background-color: crimson;
   cursor: pointer;
 }
 
@@ -1065,9 +1096,14 @@ section {
   cursor: pointer;
 }
 
+.audio:hover{
+  background-color: crimson;
+  cursor: pointer;
+}
+
 
 .screen-m:hover{
-  background-color: #0d2d54;
+  background-color: crimson;
   cursor: pointer;
 }
 
@@ -1175,7 +1211,7 @@ span{
 /*-------------- Settings -------------*/
 
 .seting-main{
-  background-image: url("https://wallpaperaccess.com/full/21018.jpg");
+  background-image: url("https://assets.pokemon.com/assets//cms-es-es/img/funzone/downloads/xy/Xerneas-Pokemon-X-and-Y_1920x1200.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1189,7 +1225,7 @@ span{
 .container-setings{
   width: 310px;
   height: 450px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
   display: flex;
@@ -1208,6 +1244,10 @@ span{
 .color-p:hover{
   color: crimson;
   font-size: 1.2rem;
+}
+
+h5{
+  color: yellow;
 }
 
 

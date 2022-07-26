@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { mode } from "../store/slices/screenMode.slice"
+import { changeNum } from '../store/slices/pokePage.slice';
+
 
 const Settings = () => {
 
@@ -15,6 +17,28 @@ const Settings = () => {
 
     const dispatchScreen = () => {
         dispatch(mode());
+        navigate("/pokedex");
+    }
+
+    const dispatchPokePage4 = () => {
+        dispatch(changeNum(4));
+        navigate("/pokedex");
+    }
+    const dispatchPokePage8 = () => {
+        dispatch(changeNum(8));
+        navigate("/pokedex");
+    }
+    const dispatchPokePage12 = () => {
+        dispatch(changeNum(12));
+        navigate("/pokedex");
+    }
+    const dispatchPokePage16 = () => {
+        dispatch(changeNum(16));
+        navigate("/pokedex");
+    }
+    const dispatchPokePage20 = () => {
+        dispatch(changeNum(20));
+        navigate("/pokedex");
     }
 
 
@@ -35,11 +59,11 @@ const Settings = () => {
                 <div className='gear2' onClick={pokedex}><i className="fa-solid fa-gear"></i></div>
                 {screenMode? <div className='screen-m' onClick={dispatchScreen}><i className="fa-solid fa-moon"></i></div>: <div className='screen-m' onClick={dispatchScreen}><i className="fa-solid fa-sun"></i></div>}
                     <h5>Pokemons by Page:</h5>
-                    <div className='color-p'>4</div>
-                    <div className='color-p'>8</div>
-                    <div className='color-p'>12</div>
-                    <div className='color-p'>16</div>
-                    <div className='color-p'>20</div>
+                    <div className='color-p' onClick={dispatchPokePage4}>4</div>
+                    <div className='color-p' onClick={dispatchPokePage8}>8</div>
+                    <div className='color-p' onClick={dispatchPokePage12}>12</div>
+                    <div className='color-p' onClick={dispatchPokePage16}>16</div>
+                    <div className='color-p' onClick={dispatchPokePage20}>20</div>
                 </div>
             </div>
         </section>
