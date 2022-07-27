@@ -141,7 +141,7 @@ const Pokedex = () => {
                     </select>
                     <div className='input-cont'>
                         <form onSubmit={submit}>
-                            <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search Pokemon by name" />
+                            <input type="text" maxlength="10" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search Pokemon by name" />
                             <button><i className="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>

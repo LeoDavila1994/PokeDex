@@ -59,7 +59,7 @@ const LogIn = (  {screen}  ) => {
                                                     <p>Welcome Trainer !</p>
                                                 </div>
                                                 <form className='input-modal-container' onSubmit={submit}>
-                                                    <input type="text" className='name-user' placeholder='Type your Name' value={user} onChange={e => setUser(e.target.value)} />
+                                                    <input type="text" maxlength="9" className='name-user' placeholder='Type your Name' value={user} onChange={e => setUser(e.target.value)}/>
                                                     <button>A</button>
                                                 </form>
                                                 <div className='img-modal-container'>
