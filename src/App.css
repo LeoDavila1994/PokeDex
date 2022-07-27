@@ -755,7 +755,7 @@ section {
   position: absolute;
   color: whitesmoke;
   right: 20px;
-  top: 0px;
+  top: -10px;
   width: 30px;
   height: 30px;
   background-color: rgba(220, 20, 60, 0.5);
@@ -768,8 +768,8 @@ section {
 .prevPage{
   position: absolute;
   color: whitesmoke;
-  right: 20px;
-  top: 50px;
+  right: 70px;
+  top: -10px;
   width: 30px;
   height: 30px;
   background-color: rgba(220, 20, 60, 0.5);
