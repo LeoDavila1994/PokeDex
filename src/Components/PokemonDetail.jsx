@@ -55,7 +55,7 @@ const PokemonDetail = () => {
     } else if (pokemon.types?.[0].type.name === "steel") {
         color = "#3f4952"
     } else if (pokemon.types?.[0].type.name === "fire") {
-        color = "#c23e06"
+        color = "#faa339"
     } else if (pokemon.types?.[0].type.name === "water") {
         color = "#24758a"
     } else if (pokemon.types?.[0].type.name === "grass") {
@@ -67,7 +67,7 @@ const PokemonDetail = () => {
     } else if (pokemon.types?.[0].type.name === "ice") {
         color = "#0e4f99"
     } else if (pokemon.types?.[0].type.name === "dragon") {
-        color = "#edb50c"
+        color = "#455e4d"
     } else if (pokemon.types?.[0].type.name === "dark") {
         color = "#040921"
     } else if (pokemon.types?.[0].type.name === "fairy") {
@@ -83,6 +83,10 @@ const PokemonDetail = () => {
 
     const pokedex = () => {
         navigate("/pokedex/settings");
+    }
+
+    const prevPage = () => {
+        navigate(-1);
     }
 
 
@@ -108,6 +112,7 @@ const PokemonDetail = () => {
             </div>
             <div className='container-pokedetail'>
                 <div className='gear3' onClick={pokedex}><i className="fa-solid fa-gear"></i></div>
+                <div className='prevPage' onClick={prevPage}><i className="fa-solid fa-angles-left"></i></div>
                 <div className='grid'>
                     <div className='item item1'>
                         <span><p>Name:</p></span>

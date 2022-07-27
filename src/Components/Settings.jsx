@@ -12,12 +12,16 @@ const Settings = () => {
     const screenMode = useSelector(state => state.screenMode);
 
     const pokedex = () => {
-        navigate("/pokedex");
+        navigate(-1);
+    }
+
+    const logOut = () => {
+        navigate("/");
     }
 
     const dispatchScreen = () => {
         dispatch(mode());
-        navigate("/pokedex");
+        navigate(-1);
     }
 
     const dispatchPokePage4 = () => {
@@ -56,6 +60,7 @@ const Settings = () => {
                 </div>
             <div className='seting-main'>
                 <div className='container-setings'>
+                <div className='logOut' onClick={logOut}><i className="fa-solid fa-arrow-right-from-bracket"></i></div>
                 <div className='gear2' onClick={pokedex}><i className="fa-solid fa-gear"></i></div>
                 {screenMode? <div className='screen-m' onClick={dispatchScreen}><i className="fa-solid fa-moon"></i></div>: <div className='screen-m' onClick={dispatchScreen}><i className="fa-solid fa-sun"></i></div>}
                     <h5>Pokemons by Page:</h5>

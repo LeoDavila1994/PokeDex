@@ -34,7 +34,7 @@ const PokemonCard = ({ pokeData }) => {
     } else if (pokemon.types?.[0].type.name === "steel") {
         color = "#3f4952"
     } else if (pokemon.types?.[0].type.name === "fire") {
-        color = "#e87348"
+        color = "#faa339"
     } else if (pokemon.types?.[0].type.name === "water") {
         color = "#24758a"
     } else if (pokemon.types?.[0].type.name === "grass") {
@@ -46,7 +46,7 @@ const PokemonCard = ({ pokeData }) => {
     } else if (pokemon.types?.[0].type.name === "ice") {
         color = "#0e4f99"
     } else if (pokemon.types?.[0].type.name === "dragon") {
-        color = "#edb50c"
+        color = "#455e4d"
     } else if (pokemon.types?.[0].type.name === "dark") {
         color = "#040921"
     } else if (pokemon.types?.[0].type.name === "fairy") {

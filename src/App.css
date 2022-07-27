@@ -716,7 +716,7 @@ section {
   top: 69px;
   width: 30px;
   height: 30px;
-  background-color: #0d2d5486;
+  background-color: rgba(220, 20, 60, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -726,7 +726,7 @@ section {
 .gear2{
   position: absolute;
   color: whitesmoke;
-  right: 90px;
+  right: 30px;
   top: 30px;
   width: 30px;
   height: 30px;
@@ -737,7 +737,7 @@ section {
   border-radius: 50%;
 }
 
-.audio{
+.logOut{
   position: absolute;
   color: whitesmoke;
   left: 30px;
@@ -758,7 +758,21 @@ section {
   top: 0px;
   width: 30px;
   height: 30px;
-  background-color: #0d2d5486;
+  background-color: rgba(220, 20, 60, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.prevPage{
+  position: absolute;
+  color: whitesmoke;
+  right: 20px;
+  top: 50px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(220, 20, 60, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -768,7 +782,7 @@ section {
 .screen-m{
   position: absolute;
   color: whitesmoke;
-  left: 90px;
+  left: 140px;
   top: 30px;
   width: 30px;
   height: 30px;
@@ -1082,7 +1096,7 @@ section {
 /*-----------Pokemon Detail-----------*/
 
 .gear:hover{
-  background-color: #0d2d54;
+  background-color: crimson;
   cursor: pointer;
 }
 
@@ -1092,11 +1106,16 @@ section {
 }
 
 .gear3:hover{
-  background-color: #0d2d54;
+  background-color: crimson;
   cursor: pointer;
 }
 
-.audio:hover{
+.prevPage:hover{
+  background-color: crimson;
+  cursor: pointer;
+}
+
+.logOut:hover{
   background-color: crimson;
   cursor: pointer;
 }
@@ -1236,14 +1255,25 @@ span{
 }
 
 .color-p{
-  color: whitesmoke;
+  color: black;
   cursor: pointer;
-  margin: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.6rem;
+  padding: 0.5rem;
+  background-color: rgba(245, 245, 245, 0.5);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
 }
 
 .color-p:hover{
   color: crimson;
-  font-size: 1.2rem;
+  border: 1px solid crimson;
+  background-color: whitesmoke;
 }
 
 h5{
