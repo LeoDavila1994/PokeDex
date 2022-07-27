@@ -25,6 +25,8 @@ const Pokedex = () => {
 
     }, []);
 
+    console.log(pokemons)
+
     const lastPage = Math.ceil(pokemons.length / pokePage);
     const [page, setPage] = useState(1);
     const lastIndex = page * pokePage;
@@ -129,7 +131,7 @@ const Pokedex = () => {
             ) : (
                 <>
                     <select className='selection' onChange={filterType}>
-                        <option value="">Select Type</option>
+                        <option value={pokemons}>All Pokemons</option>
                         {pokemonType.map(type => (
                             <option key={type.name} value={type.url}>{type.name}</option>
                         ))}
