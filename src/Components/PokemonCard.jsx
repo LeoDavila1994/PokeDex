@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const PokemonCard = ({ pokeData }) => {
 
     const navigate = useNavigate();
     const [pokemon, setPokemon] = useState("");
     let color = "crimson";
+    const screenMode = useSelector(state => state.screenMode);
 
     useEffect(() => {
         axios.get(`${pokeData}`)
@@ -57,7 +59,18 @@ const PokemonCard = ({ pokeData }) => {
         color = "#383636"
     } else {
         color = "crimson"
-    }
+    };
+
+    let pColor = "";
+    let p = "";
+
+    if (screenMode === true) {
+        pColor = "whitesmoke"
+        p = "crimson"
+    } else if (screenMode === false) {
+        pColor = "gray"
+        p = "whitesmoke"
+    };
 
 
     const detailRoute = () => {
@@ -66,13 +79,13 @@ const PokemonCard = ({ pokeData }) => {
 
     return (
         <div onClick={detailRoute}>
-            <div className='pokemon-card'>
+            <div className='pokemon-card' style={{ background: `${pColor}` }}>
                 <div className='poke-image' style={{ background: `${color}` }}>
                     <img src={pokemon.sprites?.other.home.front_default} alt="" />
                 </div>
                 <div className='poke-center'></div>
                 <div className='name-cont-p'>
-                    <p>{pokemon.name}</p>
+                    <p style={{color: `${p}`}}>{pokemon.name}</p>
                 </div>
             </div>
         </div>

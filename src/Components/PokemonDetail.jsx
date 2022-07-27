@@ -95,7 +95,7 @@ const PokemonDetail = () => {
     if (screenMode === true) {
         screenColor = "#d0fffd"
     } else if (screenMode === false) {
-        screenColor = "#2c2c2e"
+        screenColor = "#2e354d"
     };
 
     return (

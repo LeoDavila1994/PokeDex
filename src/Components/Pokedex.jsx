@@ -25,7 +25,7 @@ const Pokedex = () => {
 
     }, []);
 
-    console.log(pokemons)
+    console.log(pokemons);
 
     const lastPage = Math.ceil(pokemons.length / pokePage);
     const [page, setPage] = useState(1);
@@ -61,8 +61,6 @@ const Pokedex = () => {
         }
     }
 
-    console.log(numberPage.length)
-
     const filterType = e => {
         axios.get(e.target.value)
             .then(res => setPokemons(res.data.pokemon))
@@ -96,12 +94,17 @@ const Pokedex = () => {
     }
 
     let screenColor = "";
+    let pagColor = "";
 
     if (screenMode === true){
         screenColor = "#d0fffd"
+        pagColor = "black"
     } else if (screenMode === false){
-        screenColor = "#708786"
+        screenColor = "#2e354d"
+        pagColor = "whitesmoke"
     };
+
+
 
 
     return (
@@ -131,7 +134,7 @@ const Pokedex = () => {
             ) : (
                 <>
                     <select className='selection' onChange={filterType}>
-                        <option value={pokemons}>All Pokemons</option>
+                        <option value={pokemons}>Select Type</option>
                         {pokemonType.map(type => (
                             <option key={type.name} value={type.url}>{type.name}</option>
                         ))}
@@ -148,7 +151,7 @@ const Pokedex = () => {
                         ))}
                         <div className='pagination-container'>
                             <button className='poke-btn' onClick={previousPage} disabled={page === 1}><i className="fa-solid fa-angle-left"></i></button>
-                            {numberPage.map(number => (<div key={number} onClick={() => setPage(number)} disabled={numberPage.length <= limitTwo}><p>{number}</p></div>))}
+                            {numberPage.map(number => (<div key={number} onClick={() => setPage(number)} disabled={numberPage.length <= limitTwo}><p style={{color: `${pagColor}`}} className="change-p">{number}</p></div>))}
                             <button className='poke-btn' onClick={nextPage} disabled={limitTwo === lastPage || limitTwo > lastPage}><i className="fa-solid fa-angle-right"></i></button>
                         </div>
                     </div>
