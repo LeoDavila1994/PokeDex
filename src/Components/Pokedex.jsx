@@ -25,6 +25,7 @@ const Pokedex = () => {
 
     }, []);
 
+    const lastPage = Math.ceil(pokemons.length / pokePage);
     const [page, setPage] = useState(1);
     const lastIndex = page * pokePage;
     const firstIndex = lastIndex - pokePage;
@@ -45,13 +46,20 @@ const Pokedex = () => {
     }
 
     const pokemonPagination = pokemons.slice(firstIndex, lastIndex);
-    const lastPage = Math.ceil(pokemons.length / pokePage);
 
     const numberPage = [];
 
-    for (let i = limitOne; i <= limitTwo; i++) {
-        numberPage.push(i);
+    if (lastPage >= 5){
+        for (let i = limitOne; i <= limitTwo; i++) {
+            numberPage.push(i);
+        }
+    } else {
+        for (let i = limitOne; i <= lastPage; i++) {
+            numberPage.push(i);
+        }
     }
+
+    console.log(numberPage.length)
 
     const filterType = e => {
         axios.get(e.target.value)
@@ -90,7 +98,7 @@ const Pokedex = () => {
     if (screenMode === true){
         screenColor = "#d0fffd"
     } else if (screenMode === false){
-        screenColor = "#2c2c2e"
+        screenColor = "#708786"
     };
 
 
@@ -138,8 +146,8 @@ const Pokedex = () => {
                         ))}
                         <div className='pagination-container'>
                             <button className='poke-btn' onClick={previousPage} disabled={page === 1}><i className="fa-solid fa-angle-left"></i></button>
-                            {numberPage.map(number => (<div onClick={() => setPage(number)}><p>{number}</p></div>))}
-                            <button className='poke-btn' onClick={nextPage} disabled={limitTwo === lastPage}><i className="fa-solid fa-angle-right"></i></button>
+                            {numberPage.map(number => (<div key={number} onClick={() => setPage(number)} disabled={numberPage.length <= limitTwo}><p>{number}</p></div>))}
+                            <button className='poke-btn' onClick={nextPage} disabled={limitTwo === lastPage || limitTwo > lastPage}><i className="fa-solid fa-angle-right"></i></button>
                         </div>
                     </div>
                 </>
